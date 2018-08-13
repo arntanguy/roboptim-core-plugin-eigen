@@ -212,6 +212,7 @@ namespace roboptim
             solverState_.x() = x_;
             solverState_.cost () = lm.fnorm * lm.fnorm;
             callback_ (problem (), solverState_);
+            x_ = solverState_.x();
           }
       } while (status == LevenbergMarquardtSpace::Running);
 
